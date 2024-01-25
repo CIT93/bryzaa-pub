@@ -27,3 +27,5 @@ const numberInHousehold = 2;
 
 determineHouseHoldPts(3)
 determineHouseHoldPts(4)
+determineHouseHoldPts(7)
+
