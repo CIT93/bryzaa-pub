@@ -80,7 +80,3 @@ FORM.addEventListener ('submit', function(e){
     displayOutput()
     FORM.reset();
 })
-
-//the apartment code does not return.
-//my add event listener gives me a error
-// to make sure the user give me good answers gi
