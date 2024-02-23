@@ -38,6 +38,21 @@ function determineHouseHoldPts(numberInHousehold){
 return houseHoldPoints
 }
 
+function start(first, last, numberInHousehold, size) {
+    const houseHoldPoints = determineHouseHoldPts(numberInHousehold);
+    const sizeOfHousePoints = determineHouseSizePts(size);
+    const total = houseHoldPoints + sizeOfHousePoints;
+    cfpData.push([numberInHousehold, size, houseHoldPoints, sizeOfHousePoints, total]);
+    cfpData.push({
+        firstNam: first,
+        lastName: last,
+        householdNum: numberInHousehold,
+        houseSize: size,
+        housePoints: houseHoldPoints,
+        houseSizePoints: sizeOfHousePoints,
+        cfpTotal: total
+    });
+}
 function displayOutput(){
     const output = document.getElementById("output");
     for (obj of cfpData) {
@@ -75,7 +90,7 @@ FORM.addEventListener ('submit', function(e){
     const lastName = FORM.lastname.value;
     const numberInHousehold = parseInt(FORM.householdNum.value);
     const houseSize = FORM.house.value;
-    start(numberInHousehold, houseSize);
+    start(firstName, lastName, numberInHousehold, houseSize);
     OUTPUT.innerHTML = "";
     displayOutput()
     FORM.reset();
